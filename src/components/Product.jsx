@@ -1,82 +1,43 @@
 import logoImg from '../assets/test-logo.png'
-import bijouxImg from '../assets/test-bijoux.png'
+import bijoux1 from '../assets/bijoux1.png'
+import bijoux2 from '../assets/bijoux2.png'
+import bijoux3 from '../assets/bijoux3.png'
+import bijoux4 from '../assets/bijoux4.png'
+import { products } from '../data'
 
-export default function Product({ selectedColor, setSelectedColor, colors, addToCart }) {
-  const specs = [
-    { icon: '⚡', label: 'Autonomie', value: '7 jours' },
-    { icon: '💧', label: 'Résistance', value: 'IP68 · 30m' },
-    { icon: '📡', label: 'Connexion', value: 'Bluetooth 5.2' },
-    { icon: '🪙', label: 'Matière', value: 'Or 18k recyclé' },
-  ]
+const images = [bijoux1, bijoux2, bijoux3, bijoux4]
 
+export default function Product({ addToCart }) {
   return (
     <section className="product" id="produit">
-      <div className="product-inner">
-        <div className="product-visual">
-          <div className="product-card">
-            <div className="product-badge">Édition Limitée</div>
-                <div className="hero-jewel">
-                    <div className="jewel-ring" />
-                        <div className="jewel-inner">
-                            <img src={bijouxImg} alt="Diamant" className="jewel-gem-img" />
-                        </div>
-                    </div>
-            <div className="product-card-name">
-              <img src={logoImg} alt="Logo" className="product-logo" />
+      <div className="catalog-header">
+        <p className="section-label" style={{ justifyContent: 'center' }}>Notre Collection</p>
+        <div className="catalog-logo-wrap">
+          <img src={logoImg} alt="Alya" className="section-logo" />
+        </div>
+        <p className="catalog-subtitle">Quatre créations d'exception. Une seule passion&nbsp;: votre élégance.</p>
+      </div>
+
+      <div className="catalog-grid">
+        {products.map((p, i) => (
+          <div key={p.id} className="catalog-card">
+            <div className="catalog-card-img-wrap">
+              <img src={images[i]} alt={p.name} className="catalog-card-img" />
+              <span className="catalog-badge">{p.badge}</span>
             </div>
-            <div className="product-card-sub">Rubis & Or 18 carats — Collection Prestige</div>
-          </div>
-        </div>
-
-        <div className="product-info">
-          <p className="section-label">Le bijoux</p>
-          <div className="section-title">
-            <img src={logoImg} alt="Logo" className="section-logo" />
-          </div>
-
-          <div className="product-price-area">
-            <div className="product-price">1 290 €</div>
-            <div className="product-price-sub">Livraison offerte · Paiement 3× sans frais</div>
-          </div>
-
-          <p className="product-desc">
-            Un chef-d'œuvre d'orfèvrerie aux capacités biométriques de pointe.
-            Suivi du stress, du rythme cardiaque et du sommeil — le tout dissimulé dans une pierre d'exception.
-          </p>
-
-          <div className="specs-grid">
-            {specs.map(s => (
-              <div key={s.label} className="spec-item">
-                <div className="spec-icon">{s.icon}</div>
-                <div className="spec-label">{s.label}</div>
-                <div className="spec-value">{s.value}</div>
+            <div className="catalog-card-body">
+              <div className="catalog-card-name">{p.name}</div>
+              <div className="catalog-card-sub">{p.subtitle}</div>
+              <p className="catalog-card-desc">{p.desc}</p>
+              <div className="catalog-card-footer">
+                <div className="catalog-price">{p.price}</div>
+                <button className="catalog-btn" onClick={() => addToCart(p.name)}>
+                  Ajouter au panier
+                </button>
               </div>
-            ))}
+            </div>
           </div>
-
-          <div className="color-options">
-            <span className="color-label">Finition :</span>
-            {colors.map((c, i) => (
-              <div
-                key={i}
-                className={`color-dot ${selectedColor === i ? 'active' : ''}`}
-                style={{ background: c.bg }}
-                onClick={() => setSelectedColor(i)}
-                title={c.name}
-              />
-            ))}
-            <span style={{ fontSize: '0.8rem', color: '#999', marginLeft: '0.5rem' }}>
-              {colors[selectedColor].name}
-            </span>
-          </div>
-
-          <button className="btn-primary" onClick={addToCart}>
-            Ajouter au panier — {colors[selectedColor].name}
-          </button>
-          <button className="btn-secondary">
-            Réserver une consultation privée
-          </button>
-        </div>
+        ))}
       </div>
     </section>
   )

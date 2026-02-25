@@ -1,8 +1,36 @@
-export const colors = [
-  { bg: '#C9A96E', name: 'Or' },
-  { bg: '#C0C0C0', name: 'Argent' },
-  { bg: '#1A0A0D', name: 'Noir' },
-  { bg: '#7B1F2E', name: 'Rouge' },
+export const products = [
+  {
+    id: 1,
+    name: 'Éclat Rouge',
+    subtitle: 'Rubis & Or 18 carats',
+    price: '99 €',
+    badge: 'Bestseller',
+    desc: "Un rubis naturel serti dans un anneau d'or 18 carats recyclé. Élégance intemporelle et capteur biométrique discret.",
+  },
+  {
+    id: 2,
+    name: 'Lumière Pure',
+    subtitle: 'Diamant & Platine',
+    price: '99 €',
+    badge: 'Édition Limitée',
+    desc: 'Diamant taille brillant sur monture platine. La pureté absolue, alliée à la haute technologie.',
+  },
+  {
+    id: 3,
+    name: 'Nuit Saphir',
+    subtitle: 'Saphir & Or Rose',
+    price: '99 €',
+    badge: 'Nouveau',
+    desc: "Saphir de Ceylan serti sur or rose 18 carats. Un contraste saisissant entre tradition et modernité.",
+  },
+  {
+    id: 4,
+    name: "Forêt Émeraude",
+    subtitle: 'Émeraude & Or Blanc',
+    price: '99 €',
+    badge: 'Collection Prestige',
+    desc: "Émeraude de Colombie certifiée sur or blanc mat. Pour celles qui osent l'exception.",
+  },
 ]
 
 export const features = [

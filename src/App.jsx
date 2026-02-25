@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import './styles/global.css'
-import { colors } from './data'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,8 +12,7 @@ import Toast from './components/Toast'
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false)
-  const [selectedColor, setSelectedColor] = useState(0)
-  const [toast, setToast] = useState(false)
+  const [toast, setToast] = useState({ show: false, name: '' })
   const [cart, setCart] = useState(0)
 
   useEffect(() => {
@@ -23,10 +21,10 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const addToCart = () => {
+  const addToCart = (name = '') => {
     setCart(c => c + 1)
-    setToast(true)
-    setTimeout(() => setToast(false), 3000)
+    setToast({ show: true, name })
+    setTimeout(() => setToast({ show: false, name: '' }), 3000)
   }
 
   return (
@@ -34,17 +32,12 @@ export default function App() {
       <Navbar scrolled={scrolled} cart={cart} />
       <Hero />
       <About />
-      <Product
-        selectedColor={selectedColor}
-        setSelectedColor={setSelectedColor}
-        colors={colors}
-        addToCart={addToCart}
-      />
+      <Product addToCart={addToCart} />
       <Features />
       <Banner addToCart={addToCart} />
       <Testimonials />
       <Footer />
-      <Toast show={toast} colorName={colors[selectedColor].name} />
+      <Toast show={toast.show} productName={toast.name} />
     </>
   )
 }
