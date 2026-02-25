@@ -1,3 +1,6 @@
+import logoImg from '../assets/test-logo.png'
+import bijouxImg from '../assets/test-bijoux.png'
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -10,16 +13,12 @@ export default function Hero() {
         <div className="hero-jewel">
           <div className="jewel-ring" />
           <div className="jewel-inner">
-            <img 
-              src="./src/assets/test-bijoux.png"
-              alt="Diamant"
-              className="jewel-gem-img"
-            />
+            <img src={bijouxImg} alt="Diamant" className="jewel-gem-img" />
           </div>
         </div>
 
         <div className="hero-title">
-          <img src="./src/assets/test-logo.png" alt="Logo" className="hero-logo" />
+          <img src={logoImg} alt="Logo" className="hero-logo" />
         </div>
 
         <p className="hero-subtitle">Le bijoux qui vous protège.</p>

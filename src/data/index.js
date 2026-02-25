@@ -13,7 +13,7 @@ export const features = [
   },
   {
     icon: '📱',
-    title: 'App LUMINA',
+    title: 'App Alya',
     desc: 'Synchronisation Bluetooth instantanée. Recevez des alertes douces par vibration et pilotez tout depuis votre smartphone.',
   },
   {

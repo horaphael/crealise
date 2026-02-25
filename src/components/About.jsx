@@ -1,3 +1,5 @@
+import bijouxImg from '../assets/test-bijoux.png'
+
 export default function About() {
   return (
     <section className="about" id="about">
@@ -5,7 +7,7 @@ export default function About() {
         <p className="section-label">Notre Vision</p>
         <h2 className="section-title">Luxe &<br /><em>Intelligence</em><br />Réunis</h2>
         <p className="about-text">
-          LUMINA Ring est né d'une conviction : la technologie la plus avancée doit aussi être la plus belle.
+          Alya est né d'une conviction : la technologie la plus avancée doit aussi être la plus belle.
           Nous avons passé 3 ans à fondre l'horlogerie suisse et la biométrie médicale dans un seul bijou.
         </p>
         <p className="about-text">
@@ -27,11 +29,7 @@ export default function About() {
             <div className="hero-jewel">
             <div className="jewel-ring" />
                 <div className="jewel-inner">
-                    <img 
-                    src="./src/assets/test-bijoux.png"
-                    alt="Diamant"
-                    className="jewel-gem-img"
-                    />
+                    <img src={bijouxImg} alt="Diamant" className="jewel-gem-img" />
                 </div>
         </div>
           </div>

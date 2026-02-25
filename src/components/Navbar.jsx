@@ -1,8 +1,10 @@
+import logoImg from '../assets/test-logo.png'
+
 export default function Navbar({ scrolled, cart }) {
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="nav-brand">
-        <img src="./src/assets/test-logo.png" alt="Logo" className="nav-logo" />
+        <img src={logoImg} alt="Logo" className="nav-logo" />
       </div>
       <ul className="nav-links">
         <li><a href="#about">À propos</a></li>

@@ -1,3 +1,5 @@
+import logoImg from '../assets/test-logo.png'
+
 export default function Footer() {
   return (
     <footer>
@@ -10,7 +12,7 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Produit</h4>
-          <a href="#"><img src="./src/assets/test-logo.png" alt="Logo" className="footer-link-logo" /></a>
+          <a href="#"><img src={logoImg} alt="Logo" className="footer-link-logo" /></a>
           <a href="#">Finitions</a>
           <a href="#">App Mobile</a>
           <a href="#">FAQ</a>
@@ -24,9 +26,9 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href="#">hello@lumina-ring.fr</a>
-          <a href="#">www.lumina-ring.fr</a>
-          <a href="#">@lumina.ring</a>
+          <a href="#">hello@alya.fr</a>
+          <a href="#">www.alya.fr</a>
+          <a href="#">@alya.bijoux</a>
         </div>
       </div>
       <div className="footer-bottom">

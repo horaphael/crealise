@@ -1,3 +1,6 @@
+import logoImg from '../assets/test-logo.png'
+import bijouxImg from '../assets/test-bijoux.png'
+
 export default function Product({ selectedColor, setSelectedColor, colors, addToCart }) {
   const specs = [
     { icon: '⚡', label: 'Autonomie', value: '7 jours' },
@@ -15,15 +18,11 @@ export default function Product({ selectedColor, setSelectedColor, colors, addTo
                 <div className="hero-jewel">
                     <div className="jewel-ring" />
                         <div className="jewel-inner">
-                            <img 
-                            src="./src/assets/test-bijoux.png"
-                            alt="Diamant"
-                            className="jewel-gem-img"
-                            />
+                            <img src={bijouxImg} alt="Diamant" className="jewel-gem-img" />
                         </div>
                     </div>
             <div className="product-card-name">
-              <img src="./src/assets/test-logo.png" alt="Logo" className="product-logo" />
+              <img src={logoImg} alt="Logo" className="product-logo" />
             </div>
             <div className="product-card-sub">Rubis & Or 18 carats — Collection Prestige</div>
           </div>
@@ -32,7 +31,7 @@ export default function Product({ selectedColor, setSelectedColor, colors, addTo
         <div className="product-info">
           <p className="section-label">Le bijoux</p>
           <div className="section-title">
-            <img src="./src/assets/test-logo.png" alt="Logo" className="section-logo" />
+            <img src={logoImg} alt="Logo" className="section-logo" />
           </div>
 
           <div className="product-price-area">

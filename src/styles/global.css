@@ -686,7 +686,7 @@ nav.scrolled {
 }
 
 .features::before {
-  content: 'LUMINA';
+  content: 'ALYA';
   position: absolute;
   font-family: 'Playfair Display', serif;
   font-size: 25vw;
